@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+
+/* Icons */
+@import url('https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Fonts  */ 
+  --header_font:  "Syne", sans-serif;
+  --body_font: "DM Sans", sans-serif;
+  
+  /* Background Colors */
+  --bg_main: #FAF7EE;
+  --bg_alt: #F0EAD6;
+
+  /* Text Colors */
+  --primary: #E64A38;
+  --primary_color: rgb(26, 24, 21, 0.2);
+  --secondary: #59534B;
+  --secondary_color: #1A1815;
+  --color_text-cta: #FAF7EE;
+
+  /* Button */
+  --btn-bg-hover: #2D2924; /* ~8% warmer, lighter tone */
+  --btn-shadow-hover: 0 4px 12px rgba(26, 24, 21, 0.35);
+
+  /* Icons */
+  --icon__default: #F5B027;
+  
+/* Font Sizes */
+  --font-h1: clamp(2rem, 1.65rem + 1.65vw, 3.15rem);       /* 32px -> ~50.4px */
+  --font-h2: clamp(1.5rem, 1.3rem + 0.95vw, 2.15rem);      /* 24px -> ~34.4px */
+  --font-h3: clamp(1.25rem, 1.15rem + 0.5vw, 1.6rem);      /* 20px -> ~25.6px */
+  --font-h4: clamp(1.125rem, 1.05rem + 0.35vw, 1.35rem);   /* 18px -> ~21.6px */
+  --font-p: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);        /* 16px -> 18px */
+  --font-small: clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem); /* 12px -> 14px */
+}
+
+body {
+  font-family: var(--body_font);
+  background-color: var(--bg_main);
+}
