@@ -25,6 +25,13 @@
   --secondary_color: #1A1815;
   --color_text-cta: #FAF7EE;
 
+  /* Nodes bg-colors */
+  --node_black: #000000;
+  --node_orange: #F59E0B;
+  --node_blue: #3B82F6;
+  --node_purple: #A855F7;
+  --node_green: #10B981;
+
   /* Button */
   --btn-bg-hover: #2D2924; /* ~8% warmer, lighter tone */
   --btn-shadow-hover: 0 4px 12px rgba(26, 24, 21, 0.35);
