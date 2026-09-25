@@ -1,0 +1,146 @@
+/* Container & Background */
+.process-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #FDFBF7;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111827;
+}
+
+.process-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse; /* Keeps Hold 01 at the bottom and Hold 05 at the top */
+  gap: 48px;
+}
+
+/* Center Dashed Vertical Line */
+.process-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  border-left: 2px dashed #D1D5DB;
+  z-index: 1;
+}
+
+/* Row Grid Layout */
+.process {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Column Alignment */
+.process__left {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 20px;
+}
+
+.process__chain {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.process__right {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+/* Typography & Content Cards */
+.hold-tag {
+  display: block;
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0284C7;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  color: #111827;
+}
+
+.step-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #4B5563;
+  margin: 0;
+  max-width: 280px;
+}
+
+/* Pill Badges */
+.pill-block {
+  display: inline-block;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-family: monospace;
+  font-size: 11px;
+  color: #4B5563;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pill-green {
+  background-color: #ECFDF5;
+  border-color: #A7F3D0;
+  color: #047857;
+}
+
+/* Nodes Inside process__chain */
+.node-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid #FFFFFF;
+}
+
+.node-black  { background-color: #000000; }
+.node-orange { background-color: #F59E0B; }
+.node-blue   { background-color: #3B82F6; }
+.node-purple { background-color: #A855F7; }
+.node-green  { background-color: #10B981; }
+
+/* You Are Here Badge */
+.you-are-here-badge {
+  position: absolute;
+  top: -8px;
+  left: 38px;
+  white-space: nowrap;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: monospace;
+  font-size: 8px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
