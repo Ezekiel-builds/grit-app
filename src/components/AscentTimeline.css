@@ -122,7 +122,7 @@
   border: 2px solid #FFFFFF;
 }
 
-.node__black  { background-color: #000000; display: flex;}
+.node__black  { background-color: #000000;}
 .node__orange { background-color: #F59E0B; }
 .node__blue   { background-color: #3B82F6; }
 .node__purple { background-color: #A855F7; }

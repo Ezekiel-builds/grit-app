@@ -39,6 +39,13 @@
   --node_purple: #A855F7;
   --node_green: #10B981;
 
+  /* Dots */
+   --wall__stepnav-dot--scout: #1C1C18;
+   --wall__stepnav-dot--out: #D97706;
+   --wall__stepnav-dot--talk: #2563EB;
+   --wall__stepnav-dot--scope: #DB2777;
+   --wall__stepnav-dot--won: #059669;
+
   /* Border colors */
   --border_orange: rgba(230, 74, 56, 0.3);
   --border_yellow: rgba(245, 176, 39, 0.4);
