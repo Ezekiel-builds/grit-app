@@ -1,4 +1,5 @@
-import  GritLogo  from '../assets/Grit_logo.png';
+import { Link } from 'react-router';
+import GritLogo from '../assets/Grit_logo.png';
 import './Header.css';
 
 function Header() {
@@ -11,10 +12,10 @@ function Header() {
             </div>
 
             <nav className="header__nav">
-                <a href="#" className="header__nav-link">The Reality</a>
-                <a href="#" className="header__nav-link">The Wall</a>
-                <a href="#" className="header__nav-link">Dashboard</a>
-                <a href="#" className="header__nav-cta">Get Gritted <i className="fi fi-rr-arrow-up-right cta__icon"></i></a>
+                <Link to="/the-reality" className="header__nav-link">The Reality</Link>
+                <Link to="/the-wall" className="header__nav-link">The Wall</Link>
+                <Link to="/dashboard" className="header__nav-link">Dashboard</Link>
+                <Link to={(e) => e.prevenDefault()} className="header__nav-cta">Get Gritted <i className="fi fi-rr-arrow-up-right cta__icon"></i></Link>
             </nav>
         </header>
     )
