@@ -19,6 +19,8 @@
   --bg_main: #FAF7EE;
   --bg_alt: #F0EAD6;
   --bg_surface: #FFFDF8;
+  --bg_mute: #EBE8E2;
+  --bg_card: #F6F3ED;
 
   /* Text Colors */
   --primary: #E64A38;
@@ -28,6 +30,7 @@
   --color_text-cta: #FAF7EE;
   --color_text-btn: #FFFF;
   --color_text-muted: #737373;
+  --color_text-mute: #615E5B;
 
   /* Nodes bg-colors */
   --node_black: #000000;
@@ -35,6 +38,11 @@
   --node_blue: #3B82F6;
   --node_purple: #A855F7;
   --node_green: #10B981;
+
+  /* Border colors */
+  --border_orange: rgba(230, 74, 56, 0.3);
+  --border_yellow: rgba(245, 176, 39, 0.4);
+  --border_green: rgba(47, 133, 90, 0.4);
 
   /* Button */
   --btn-bg-hover: #2D2924; /* ~8% warmer, lighter tone */

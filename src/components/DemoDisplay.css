@@ -1,0 +1,219 @@
+.board__section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #F8F6EF;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111827;
+}
+
+.font__mono {
+  font-family: monospace;
+}
+
+/* Topbar */
+.board__topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.snap__btn {
+  background: #000;
+  color: #FFF;
+  border: 2px solid #000;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #000;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.snap__btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px #000;
+}
+
+/* Column Grid Base Layout */
+.board__columns {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  min-height: 480px;
+  padding: 16px;
+  background-color: #F2EFE6;
+  border: 1.5px solid #E2DDD0;
+  border-radius: 8px;
+}
+
+.board__column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 12px 8px;
+}
+
+.column__header {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Card Styling */
+.card {
+  position: relative;
+  border: 1.5px solid #000;
+  border-radius: 6px;
+  padding: 12px;
+  background: #FFF;
+  box-shadow: 3px 3px 0px #000;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Smooth spring motion */
+}
+
+.tape {
+  position: absolute;
+  top: -8px;
+  left: 35%;
+  width: 40px;
+  height: 12px;
+  background: #E8E1CE;
+  border: 1px solid #D1C7B0;
+  opacity: 0.85;
+}
+
+.card__top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stage__text { color: #9CA3AF; }
+
+.card__body {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 10px 0;
+}
+
+.card__footer {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Color Themes */
+.note__red    { background-color: #FFF2F2; }
+.note__yellow { background-color: #FFFDEB; }
+.note__blue   { background-color: #F0F7FF; }
+.note__purple { background-color: #FAF5FF; }
+.note__pink   { background-color: #FFF5F7; }
+.note__green  { background-color: #F0FDF4; }
+
+.red__text    { color: #E11D48; }
+.yellow__text { color: #D97706; }
+.blue__text   { color: #2563EB; }
+.pink__text   { color: #DB2777; }
+.green__text  { color: #16A34A; }
+
+.red__dot    { color: #EF4444; }
+.yellow__dot { color: #F59E0B; }
+.blue__dot   { color: #3B82F6; }
+.pink__dot   { color: #EC4899; }
+.green__dot  { color: #10B981; }
+
+/* ===================================================
+   SCATTERED STATE (Triggered when .is-scattered is set)
+   =================================================== */
+
+/* Optional fade out of column headers while scattered */
+.is__scattered .column__header {
+  opacity: 0.2;
+  transition: opacity 0.3s;
+}
+
+.is__scattered .card {
+  position: absolute;
+  z-index: 10;
+}
+
+/* Individual card placement and rotation when scattered */
+.is__scattered .card__1 {
+  top: 40px;
+  left: 30px;
+  transform: rotate(-6deg) scale(1.02);
+}
+
+.is__scattered .card__2 {
+  top: 220px;
+  left: 120px;
+  transform: rotate(4deg);
+}
+
+.is__scattered .card__3 {
+  top: 80px;
+  left: 340px;
+  transform: rotate(-3deg);
+}
+
+.is__scattered .card__4 {
+  top: 190px;
+  left: 480px;
+  transform: rotate(7deg) scale(1.03);
+}
+
+.is__scattered .card__5 {
+  top: 30px;
+  left: 680px;
+  transform: rotate(-5deg);
+}
+
+.is__scattered .card__6 {
+  top: 210px;
+  left: 820px;
+  transform: rotate(3deg);
+}
+
+/* Bottom Footer Cards */
+.board__summary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.summary__item {
+  background: #FFF;
+  padding: 12px;
+  border-radius: 4px;
+  border-top: 3px solid #000;
+  font-size: 11px;
+}
+
+.summary__title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.summary__item p {
+  margin: 0;
+  color: #6B7280;
+  line-height: 1.3;
+}
+
+.red__border    { border-top-color: #EF4444; }
+.yellow__border { border-top-color: #F59E0B; }
+.blue__border   { border-top-color: #3B82F6; }
+.pink__border   { border-top-color: #EC4899; }
+.green__border  { border-top-color: #10B981; }

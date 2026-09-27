@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import Header from "../components/Header";
 import Footer from '../components/Footer';
 import { DemoDisplay } from "../components/DemoDisplay";
+import './TheReality.css';
 
 function TheReality() {
     return (
@@ -13,7 +14,7 @@ function TheReality() {
                         <div className="journal__heading">
                             <div className="journal__heading-eyebrow">
                                 <span className="eyebrow__text">
-                                    The Unvarnished Reality
+                                    —The Unvarnished Reality
                                 </span>
                                 
                                 <span className="eyebrow__text-highlight">
@@ -22,19 +23,20 @@ function TheReality() {
                             </div>
 
                             <h3 className="journal__heading-text">
-                                I'm trying to land my first client with <span>Zero system</span> Just vibes
+                                I'm trying to land my first client with <span>zero system</span> just vibes
                                 and a Notes app.
                             </h3>
+                       </div>   
 
                             <div className="journal__body">
-                                <p className="journal__body-text">
+                                <p className="journal__body-text border__orange">
                                     I have 14 tabs open with company “About” pages, a Notion document I spent three
                                     days styling instead of sending actual messages, and a gnawing dread every
                                     Thursday afternoon wondering if I seemed desperate by following up. When you
                                     don't have a system, every single outreach feels like an existential crisis.
                                 </p>
 
-                                <p className="journal__body-text">
+                                <p className="journal__body-text border__yellow">
                                     The advice from the internet is always to go install HubSpot or build a 40-step
                                     sales funnel with automated nurture sequences and automated spam cadences.
                                     But I'm just one person with a laptop trying to get someone to pay me for my craft.
@@ -42,7 +44,7 @@ function TheReality() {
                                     to? Did they reply? What hold am I grabbing next?         
                                 </p>
 
-                                <p className="journal__body-text">
+                                <p className="journal__body-text border__green">
                                     Grit exists because pitch conversations disintegrate into cognitive mist after
                                     72 hours unless they're anchored to something physical. In rock climbing, a
                                     Grit isn't fancy—it's just a solid point of contact that supports your weight so
@@ -64,7 +66,6 @@ function TheReality() {
                                     invoice template.
                                 </p>
                             </div>
-                        </div>
                     </section>
 
                     <section className="tactile__demo">
@@ -100,7 +101,9 @@ function TheReality() {
                             </div>
 
                             <div className="cta__button-card">
-                                <Link to="/">
+                                <Link to="/"
+                                className="cta__button-link"
+                                >
                                     Get Gritted <i className="fi fi-rr-arrow-up-right cta__icon"></i>
                                 </Link>
 

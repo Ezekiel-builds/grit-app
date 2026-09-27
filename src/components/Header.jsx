@@ -6,7 +6,9 @@ function Header() {
     return (
         <header className="header">
             <div className="header__logo">
-                <img src={GritLogo} alt='Grit logo'/>
+                <Link to="/" >
+                 <img src={GritLogo} alt='Grit logo'/>
+                </Link> 
 
                 <h4 className="header__logo-text">Grit</h4>
             </div>

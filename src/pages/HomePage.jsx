@@ -1,8 +1,8 @@
+import { Link } from 'react-router';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TransformationSection from "../components/TransformationSection";
 import AscentTimeline from "../components/AscentTimeline";
-import GritLogo from "../assets/Grit_logo.png"
 import GritDasboard from "../assets/Grit_dashboard.png";
  import './HomePage.css'
  
