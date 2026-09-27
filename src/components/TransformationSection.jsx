@@ -1,5 +1,5 @@
 import { useState } from 'react';
-/* import './TransformationSection.css'; */
+ import './TransformationSection.css'; 
 
 function TransformationSection() {
     const [isSnapped, setIsSnapped] = useState(false)
@@ -7,11 +7,11 @@ function TransformationSection() {
         <section className="trans__container">
             <div className="trans__topbar">
                 <div className="trans__title">
-                    <span className="orange-dot">●</span> The Transformation: Messy Notes Snapping Into Clear Holds
+                    <span className="orange__dot">●</span> The Transformation: Messy Notes Snapping Into Clear Holds
                 </div>
 
                 <div className="trans__toggle-group">
-                    <span className="state-label">State:</span>
+                    <span className="state__label">State:</span>
 
                     <button className="snap__btn"
                     onClick={() => setIsSnapped(!isSnapped)}
@@ -24,14 +24,13 @@ function TransformationSection() {
             <div className="trans__grid">
                 <div className="left__panel">
                     <div className="panel__header">
-                        <span className="red__dot">●</span>
-                        <span className="panel-title red-text">The Scattered Notes Dump</span>
-                        <span className="panel-tag">Unstructured</span>
+                        <span className="panel-title red-text">  <span className="red__dot">●</span> The Scattered Notes Dump</span>
+                        <span className="panel__tag">Unstructured</span>
                     </div>
 
                     <div className="notes__stack">
                         {/* Note 1 */}
-                        <div className="note-card yellow-note">
+                        <div className="note__card yellow-note">
                             <div className="tape-graphic"></div>
                             <div className="note-label">DM FRAGMENT</div>
                             <div className="note-body">
@@ -40,7 +39,7 @@ function TransformationSection() {
                         </div>
 
                         {/* Note 2 */}
-                        <div className="note-card peach-note">
+                        <div className="note__card peach-note">
                             <div className="tape-graphic"></div>
                             <div className="note-label">COLD OUTREACH</div>
                             <div className="note-body">
@@ -49,7 +48,7 @@ function TransformationSection() {
                         </div>
 
                         {/* Note 3 */}
-                        <div className="note-card blue-note">
+                        <div className="note__card blue-note">
                             <div className="tape-graphic"></div>
                             <div className="note-label">BROWSER BOOKMARK</div>
                             <div className="note-body">
@@ -58,7 +57,7 @@ function TransformationSection() {
                         </div>
 
                         {/* Note 4 */}
-                        <div className="note-card pink-note">
+                        <div className="note__card pink-note">
                             <div className="tape-graphic"></div>
                             <div className="note-label">LOST DRAFT</div>
                             <div className="note-body">

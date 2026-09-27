@@ -1,15 +1,13 @@
 /* Container & Background */
-.process-container {
+.process__container {
   width: 100%;
   max-width: 850px;
   margin: 0 auto;
   padding: 60px 20px;
-  background-color: #FDFBF7;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111827;
 }
 
-.process-wrapper {
+.process__wrapper {
   position: relative;
   display: flex;
   flex-direction: column-reverse; /* Keeps Hold 01 at the bottom and Hold 05 at the top */
@@ -17,7 +15,7 @@
 }
 
 /* Center Dashed Vertical Line */
-.process-wrapper::before {
+.process__wrapper::before {
   content: '';
   position: absolute;
   top: 20px;
@@ -33,7 +31,7 @@
 .process {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 60px 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   z-index: 2;
 }
@@ -49,9 +47,11 @@
 
 .process__chain {
   position: relative;
+  width: 80px;
+  justify-self: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 .process__right {
@@ -63,9 +63,8 @@
 }
 
 /* Typography & Content Cards */
-.hold-tag {
+.hold__tag {
   display: block;
-  font-family: monospace;
   font-size: 11px;
   font-weight: 700;
   color: #0284C7;
@@ -73,14 +72,14 @@
   margin-bottom: 4px;
 }
 
-.step-title {
+.step__title {
   font-size: 18px;
   font-weight: 800;
   margin: 0 0 6px 0;
-  color: #111827;
+  color: var(--secondary_color);
 }
 
-.step-desc {
+.step__desc {
   font-size: 13px;
   line-height: 1.5;
   color: #4B5563;
@@ -89,9 +88,9 @@
 }
 
 /* Pill Badges */
-.pill-block {
+.pill__block {
   display: inline-block;
-  background-color: #FFFFFF;
+  background-color: var(--color_text-btn);
   border: 1px solid #E5E7EB;
   border-radius: 6px;
   padding: 6px 12px;
@@ -101,14 +100,14 @@
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.pill-green {
+.pill__green {
   background-color: #ECFDF5;
   border-color: #A7F3D0;
   color: #047857;
 }
 
 /* Nodes Inside process__chain */
-.node-circle {
+.node__circle {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -123,14 +122,14 @@
   border: 2px solid #FFFFFF;
 }
 
-.node-black  { background-color: #000000; }
-.node-orange { background-color: #F59E0B; }
-.node-blue   { background-color: #3B82F6; }
-.node-purple { background-color: #A855F7; }
-.node-green  { background-color: #10B981; }
+.node__black  { background-color: #000000; display: flex;}
+.node__orange { background-color: #F59E0B; }
+.node__blue   { background-color: #3B82F6; }
+.node__purple { background-color: #A855F7; }
+.node__green  { background-color: #10B981; }
 
 /* You Are Here Badge */
-.you-are-here-badge {
+.you_are-here-badge {
   position: absolute;
   top: -8px;
   left: 38px;
@@ -138,7 +137,7 @@
   background-color: #000000;
   color: #FFFFFF;
   font-family: monospace;
-  font-size: 8px;
+  font-size: var(--font-small);
   font-weight: 800;
   padding: 2px 6px;
   border-radius: 4px;

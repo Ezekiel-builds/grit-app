@@ -3,8 +3,8 @@ import TransformationSection from "../components/TransformationSection";
 import AscentTimeline from "../components/AscentTimeline";
 import GritLogo from "../assets/Grit_logo.png"
 import GritDasboard from "../assets/Grit_dashboard.png";
-/* import './HomePage.css'
- */
+ import './HomePage.css'
+ 
 function HomePage() {
   return (
     <>
@@ -12,14 +12,13 @@ function HomePage() {
       <main>
             <section className="hero">
                     <div className="hero__left">
-                    <p className="hero__eyebrow">
-                        <span className="status__dot"></span>
-                        Built for your first client . Solo freelancer edition
-                    </p>
+                    <span className="hero__eyebrow">
+                        <span className="dot__icon">•</span>  Built for your first client • Solo freelancer edition
+                    </span>
 
                     <h1 className="hero__heading">
                         Your first client is out there.{" "}
-                        <span className="hero__text-itallic">Stop lying</span> track of
+                        <span className="hero__text-itallic">Stop losing</span> track of
                         them.
                     </h1>
 
@@ -28,7 +27,7 @@ function HomePage() {
                         Notes. Half-written scope docs.{" "}
                         <span className="hero__text-highlight">Grit</span> replaces the
                         chaos with five clean climbing holds between you and your first paid
-                        invoice
+                        invoice.
                     </p>
 
                     <div className="hero__btn">
@@ -101,37 +100,40 @@ function HomePage() {
             </section>
 
             <section className="transformation__section">
-                <div className="transformation__header">
-                    <p className="header__eyebrow">
-                        // 01 • The Unvarnished Reality
-                    </p>
+               <div className="transformation__wrapper">
+            
+                    <div className="transformation__header">
+                        <p className="header__eyebrow">
+                            // 01 • The Unvarnished Reality
+                        </p>
 
-                    <h3 className="transformation__header-text">
-                        "A few weeks ago I was trying to land my first freelance
-                        client with zero system, just vibes and a Notes app."
-                    </h3>
-                </div>
-
-                <div className="transformation__body-text">
-                    <p className="transformation__text">
-                        I had 14 tabs open with company 'About' pages, a Notion doc I spent three days styling instead of
-                        sending pitches, and a gnawing dread every Thursday afternoon wondering if I seemed desperate by
-                        following up.
-                    </p>
-
-                    <p className="transformation__text">
-                        I think most people don't fail at freelancing because their craft isn't good enough. In my experience, we
-                        fail because pitch conversations disintegrate into cognitive mist after 72 hours.
-                    </p>
-
-                    <p className="transformation__text">
-                        You don't need a 40-step enterprise pipeline with scoring algorithms. You need to know: 
-                        <span className="transformation__text-highlight">Who did I message? Did they reply? What hold am I grabbing next?</span>
-                    </p>
-
-                    <div className="interactive__demo">
-                        <TransformationSection />
+                        <h3 className="transformation__header-text">
+                            "A few weeks ago I was trying to land my first freelance
+                            client with zero system, just vibes and a Notes app."
+                        </h3>
                     </div>
+
+                     <div className="transformation__body-text">
+                            <p className="transformation__text">
+                                I had 14 tabs open with company 'About' pages, a Notion doc I spent three days styling instead of
+                                sending pitches, and a gnawing dread every Thursday afternoon wondering if I seemed desperate by
+                                following up.
+                            </p>
+
+                            <p className="transformation__text">
+                                I think most people don't fail at freelancing because their craft isn't good enough. In my experience, we
+                                fail because pitch conversations disintegrate into cognitive mist after 72 hours.
+                            </p>
+
+                            <p className="transformation__text">
+                                You don't need a 40-step enterprise pipeline with scoring algorithms. You need to know: 
+                                <span className="transformation__text-highlight">Who did I message? Did they reply? What hold am I grabbing next?</span>
+                            </p>
+                     </div> 
+
+                        <div className="interactive__demo">
+                            <TransformationSection />
+                        </div>
                 </div>
             </section>
 
@@ -146,14 +148,13 @@ function HomePage() {
                     </h3>
 
                     <p className="process__text">
-                        In climbing, a foothold takes your weight so you can reach the next grip. Here is your
+                        In climbing, a <span>foothold</span> takes your weight so you can reach the next grip. Here is your
                         ascent from scouted prospect to paid deposit:
                     </p>
                 </div>
 
-                <div className="process">
                     <AscentTimeline />
-                </div>
+        
             </section>
 
             <section className="visuals">
@@ -166,13 +167,23 @@ function HomePage() {
                         Built for 5-minute daily triage.
                     </h3>
 
-                    <p className="visual__text">
+                    <p className="visuals__text">
                         Open Foothold every morning at 9:00 AM. See the two actions to take. Close Foothold at
                         9:05 AM.
                     </p>
                 </div>
 
                 <div className="visuals__image">
+                    <div className="visuals__image-topbar">
+                        <div className="topbar__left">
+                            <span className="top__circle top__circle-red"></span>
+                            <span className="top__circle top__circle-yellow"></span>
+                            <span className="top__circle top__circle-green"></span>
+
+                            <span>Grit_V1</span>
+                        </div>
+                    </div>
+
                     <img src={GritDasboard} alt="Grit dashboard" />
                     <div className="paper__clip"></div>
                     <div className="paper__clip"></div>
@@ -182,6 +193,7 @@ function HomePage() {
             <section className="cta">
                 <div className="cta__header">
                     <span className="cta__header-eyebrow">
+                        <span className="eyebrow__circle"></span>
                         The simple promise • No risk
                     </span>
 

@@ -1,137 +1,113 @@
 /* Layout & Font Globals */
-.trans-section {
+.trans__container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
-  background-color: #F7F5EE;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #111827;
-}
-
-.font-mono {
-  font-family: monospace;
-}
-
-/* Header Text Styles */
-.trans-chapter {
-  color: #E56B55;
-  font-family: monospace;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.trans-headline {
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 24px;
-}
-
-.trans-paragraph {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #374151;
-  margin-bottom: 16px;
-}
-
-.highlight-text {
-  font-weight: 500;
-}
-
-.highlight-text span {
-  color: #E56B55;
-  font-style: italic;
-}
-
-/* Main Graphic Container */
-.trans-container {
-  border: 2px solid #000;
+  border: 1px solid var(--secondary_color);
   border-radius: 12px;
-  background-color: #FAFAFA;
-  padding: 20px;
-  box-shadow: 4px 4px 0px 0px #000;
-  margin-top: 40px;
+  box-shadow: 3px 3px var(--secondary_color);
+  background-color: var(--bg_main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--secondary_color);
 }
 
 /* Topbar */
-.trans-topbar {
+.trans__topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
   margin-bottom: 20px;
   border-bottom: 1px solid #E5E7EB;
-  font-size: 13px;
+  font-size: var(--font-small);
 }
 
-.orange-dot { color: #F59E0B; margin-right: 6px; }
-.red-dot { color: #EF4444; margin-right: 6px; }
+.trans__title {
+  font-family: var(--sub__font);
+}
+
+.orange__dot { color: #F59E0B; margin-right: 6px; font-size: var(--font-p);}
+.red__dot { color: #EF4444; margin-right: 6px; }
 .green-dot { color: #10B981; margin-right: 6px; }
 
-.trans-toggle-group {
+.trans__toggle-group {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.snap-btn {
-  background: #000;
-  color: #FFF;
+.state__label {
+  color: var(--secondary);
+  font-weight: 400;
+}
+
+.snap__btn {
+  background: var(--secondary_color);
+  color: var(--color_text-btn);
   border: none;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: 3px 3px var(--secondary_color);
+  font-size: 16px;
+  font-weight: 400;
   cursor: pointer;
   transition: opacity 0.2s;
 }
 
-.snap-btn:hover {
+.snap__btn:hover {
+  transform: translateY(-2px);
   opacity: 0.85;
 }
 
 /* Grid & Panels */
-.trans-grid {
-  display: flex;
+.trans__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(250px, 2fr) auto minmax(250px, 2fr);
   align-items: center;
-  gap: 16px;
+  justify-items: stretch;
+  gap: 20px;
+  padding: 16px 20px;
 }
 
-.left-panel, .right-panel {
+/* .left__panel, .right__panel {
   flex: 1;
   border-radius: 8px;
   padding: 16px;
-}
+} 
 
 /* Left Panel (Notes) */
-.left-panel {
+.left__panel {
   border: 1.5px dashed #F87171;
   background-color: #FFF;
+  padding: 16px 20px;
 }
 
-.panel-header {
+.panel__header {
   display: flex;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: var(--font-small);
+  font-family: var(--sub__font);
+  font-weight: 400;
   margin-bottom: 16px;
 }
 
-.panel-tag {
+.panel__tag {
   color: #9CA3AF;
+  font-weight: 400;
 }
 
-.notes-stack {
+.notes__stack {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.note-card {
+.note__card {
+
   position: relative;
   border: 1.5px solid #000;
   border-radius: 6px;
