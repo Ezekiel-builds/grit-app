@@ -191,7 +191,7 @@ function HomePage() {
                 </div>
             </section>
 
-            <section className="cta">
+            <section className="main__cta">
                 <div className="cta__header">
                     <span className="cta__header-eyebrow">
                         <span className="eyebrow__circle"></span>

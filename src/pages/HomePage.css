@@ -378,7 +378,7 @@
 }
 
 /* CTA Section */
-.cta {
+.main__cta {
   display: flex;
   justify-content: center;
   align-items: center;

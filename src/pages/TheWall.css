@@ -159,7 +159,7 @@
 }
 
 .wall__hold-tag {
-    font-size: var(--font-h4);
+    font-size: var(--font-small);
     font-weight: 500;
 }
 
@@ -172,12 +172,27 @@
 .wall__hold-desc {
     margin-top: 20px;
     color: var(--secondary_color);
+    font-weight: 400;
 }
 
 .wall__hold-tip {
+    max-width: 720px;
     display: flex;
     gap: 12px;
-    margin-top: 12px;
+    margin-top: 20px;
+    padding: 0 16px;
+    background-color: #F4F0E8;
+    border-radius: 999px;
+    font-size: var(--font-small);
+    color: var(--color_text-muted);
+}
+
+.wall__hold-tip-dot {
+    font-size: var(--font-h4);
+}
+
+.wall__hold-tip-label {
+    color: var(--secondary_color);
 }
 
 .wall__note {
