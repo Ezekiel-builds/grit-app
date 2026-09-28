@@ -1,0 +1,260 @@
+.dash {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.dash__tag {
+  font-size: 12px;
+  color: #c0472b;
+  margin-bottom: 8px;
+}
+
+.dash__headline-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dash__headline {
+  font-size: 28px;
+  margin: 0;
+}
+
+.dash__headline-accent {
+  color: #c0472b;
+}
+
+.dash__add-btn {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dash__subtext {
+  color: #666;
+  margin-top: 8px;
+}
+
+.dash__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.dash__stat-card {
+  background: #f2f0ec;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.dash__stat-label {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.dash__stat-value {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dash__stat-value--green { color: #2f6b4f; }
+.dash__stat-value--red { color: #c0472b; }
+
+.dash__stat-sub {
+  font-size: 12px;
+  color: #999;
+}
+
+.dash__board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.dash__column {
+  background: #f2f0ec;
+  border-radius: 10px;
+  padding: 16px;
+  min-height: 200px;
+}
+
+.dash__column-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.dash__column-desc {
+  font-size: 12px;
+  color: #888;
+  margin: 8px 0 16px;
+}
+
+.dash__card {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #eee;
+}
+
+.dash__card-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.dash__card-source {
+  font-size: 12px;
+  color: #888;
+  margin: 4px 0;
+}
+
+.dash__nudge-badge {
+  display: inline-block;
+  background: #c0472b;
+  color: white;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.dash__card-note-input {
+  width: 100%;
+  font-size: 12px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin: 6px 0;
+  min-height: 40px;
+}
+
+.dash__card-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.dash__card-btn {
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.dash__card-btn--primary {
+  background: #111;
+  color: white;
+  border: none;
+}
+
+.dash__card-btn--danger {
+  color: #c0472b;
+}
+
+.dash__lost {
+  margin-top: 24px;
+  background: #f2f0ec;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.dash__lost-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dash__lost-tag {
+  font-size: 11px;
+  background: #e5e2db;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.dash__lost-item {
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 360px;
+  max-width: 90vw;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal__label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.modal__input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.modal__cancel {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.modal__submit {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #c0472b;
+  color: white;
+}
+
+.modal__error {
+  margin: 8px 0 0;
+  color: #b42318;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
