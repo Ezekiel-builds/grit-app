@@ -32,9 +32,9 @@ function HomePage() {
                     </p>
 
                     <div className="hero__btn">
-                        <a href="#" className="hero__btn-link">
+                        <Link to="/sign-up" className="hero__btn-link">
                         Get Gritted <i className="fi fi-rr-arrow-right hero__btn-arrow"></i>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="hero__left-bottom">
@@ -208,9 +208,9 @@ function HomePage() {
                     </p>
                 </div>
 
-                <a href="#" className="cta__btn">
+                <Link to="/sign-up" className="cta__btn">
                     Get Gritted <i className="fi fi-rr-arrow-up-right cta__icon"></i>
-                </a>
+                </Link>
 
                 <span className="cta__bottom">
                     Free. Built by someone who lived the problem. No credit card • No vanity enterprise tiers • Export your contacts anytime

@@ -178,17 +178,18 @@ function TheWall() {
                         </span>
                         </div>
                         <p className="wall__hold-desc">
-                        They want to work together; now you lock the parameters before
-                        enthusiasm fades into endless revision cycles. Deliver a tight,
-                        one-page simple proposal outlining exactly 3 deliverables, a clear
-                        flat fee, and a 48-hour acceptance window. Clear constraints
-                        protect both sides from scope creep and ambiguity.
+                            They want to work together; now you lock the parameters before
+                            enthusiasm fades into endless revision cycles. Deliver a tight,
+                            one-page simple proposal outlining exactly 3 deliverables, a clear
+                            flat fee, and a 48-hour acceptance window. Clear constraints
+                            protect both sides from scope creep and ambiguity.
                         </p>
+
                         <p className="wall__hold-tip">
-                        <span className="wall__hold-tip-dot">•</span>
-                        <span className="wall__hold-tip-label">TIP</span>
-                        Limit proposals to a single page with a defined 48-hour
-                        expiration.
+                            <span className="wall__hold-tip-dot">•</span>
+                            <span className="wall__hold-tip-label">TIP</span>
+                            Limit proposals to a single page with a defined 48-hour
+                            expiration.
                         </p>
                     </div>
                 </div>
@@ -247,7 +248,9 @@ function TheWall() {
                 Take control of your first client journey. No bloated setups, no
                 credit card required to scout your route.
                 </p>
-                <Link className="wall__cta-button">GET GRITTED →</Link>
+                <Link to="/sign-up" className="wall__cta-button">
+                    GET GRITTED →
+                </Link>
             </div>
         </div>
         <Footer />

@@ -101,7 +101,7 @@ function TheReality() {
                             </div>
 
                             <div className="cta__button-card">
-                                <Link to="/"
+                                <Link to="/sign-up"
                                 className="cta__button-link"
                                 >
                                     Get Gritted <i className="fi fi-rr-arrow-up-right cta__icon"></i>
