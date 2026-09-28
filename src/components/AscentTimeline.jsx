@@ -1,4 +1,3 @@
-import React from 'react';
 import './AscentTimeline.css';
 
 export default function AscentTimeline() {
