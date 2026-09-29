@@ -31,6 +31,12 @@
   --color_text-btn: #FFFF;
   --color_text-muted: #737373;
   --color_text-mute: #615E5B;
+  --status-danger: var(--primary);
+  --profile-avatar-1: var(--wall__stepnav-dot--talk);
+  --profile-avatar-2: var(--wall__stepnav-dot--out);
+  --profile-avatar-3: var(--wall__stepnav-dot--scope);
+  --profile-avatar-4: var(--wall__stepnav-dot--won);
+  --profile-avatar-5: var(--node_purple);
 
   /* Nodes bg-colors */
   --node_black: #000000;

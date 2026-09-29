@@ -4,6 +4,7 @@ import TheReality from './pages/TheReality';
 import TheWall from './pages/TheWall';
 import Dashboard from './pages/Dashboard';
 import SignUp from './pages/SignUp';
+import Login from './pages/Login';
 import Welcome from './pages/Welcome';
 import { useAuth } from './components/useAuth';
 import './App.css'
@@ -32,6 +33,7 @@ function App() {
         <Route path="/the-wall" element={<TheWall />} />
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/welcome" element={<RequireAuth><Welcome /></RequireAuth>} />
       </Routes>
   )

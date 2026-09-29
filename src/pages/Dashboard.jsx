@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../components/useAuth';
 import { supabase } from '../SupabaseClient';
+import Header from '../components/Header';
 import './Dashboard.css';
 
 const STAGES = [
@@ -157,21 +158,31 @@ function Dashboard() {
   }
 
   if (authLoading) {
-    return <div className="dash" role="status">Loading your dashboard...</div>;
+    return (
+      <>
+        <Header />
+        <div className="dash" role="status">Loading your dashboard...</div>
+      </>
+    );
   }
 
   if (!userId) {
     return (
-      <div className="dash">
-        <h1 className="dash__headline">Sign in to view your dashboard.</h1>
-        <p className="dash__subtext">
-          <a href="/sign-up">Create an account</a> to get started.
-        </p>
-      </div>
+      <>
+        <Header />
+        <div className="dash">
+          <h1 className="dash__headline">Sign in to view your dashboard.</h1>
+          <p className="dash__subtext">
+            <a href="/login">Log in</a> or <a href="/sign-up">create an account</a> to get started.
+          </p>
+        </div>
+      </>
     );
   }
 
   return (
+    <>
+    <Header />
     <div className="dash">
       <div className="dash__intro">
         <p className="dash__tag">● PIPELINE ACTIVE • SOLOPRENEUR LEDGER</p>
@@ -297,6 +308,7 @@ function Dashboard() {
         />
       )}
     </div>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { useAuth } from '../components/useAuth';
 import { isSupabaseConfigured, supabase } from '../SupabaseClient';
 import './SignUp.css';
@@ -141,6 +141,7 @@ function SignUp() {
                     <button type="submit" disabled={isSubmitting}>
                         {isSubmitting ? 'Creating account...' : 'Start Climbing'}
                     </button>
+                    <p className="form__switch">Already have an account? <Link to="/login">Log in</Link></p>
                 </form>
             </section>
         </div>
