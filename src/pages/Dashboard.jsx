@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../components/useAuth';
 import { supabase } from '../SupabaseClient';
 import Header from '../components/Header';
+import { isNudgeDue } from './dashboardUtils';
 import './Dashboard.css';
 
 const STAGES = [
@@ -12,12 +13,6 @@ const STAGES = [
   { key: 'won', label: '05 WON', desc: 'Deposit landed. Contract signed and active.' },
 ];
 
-function isOverdue(lastContactedAt) {
-  if (!lastContactedAt) return false;
-  const hoursSince = (Date.now() - new Date(lastContactedAt)) / (1000 * 60 * 60);
-  return hoursSince > 72;
-}
-
 function Dashboard() {
   const { user, profile, loading: authLoading } = useAuth();
   const userId = user?.id;
@@ -25,8 +20,12 @@ function Dashboard() {
   const [showAddModal, setShowAddModal] = useState(false);
   const [showLost, setShowLost] = useState(false);
   const [noteDrafts, setNoteDrafts] = useState({});
+  const [notesByProspect, setNotesByProspect] = useState({});
+  const [noteFeedback, setNoteFeedback] = useState({});
+  const [savingNotes, setSavingNotes] = useState({});
   const [addProspectError, setAddProspectError] = useState('');
   const [isAddingProspect, setIsAddingProspect] = useState(false);
+  const [clockNow, setClockNow] = useState(Date.now());
 
   async function getProspects(userId) {
     return supabase
@@ -36,6 +35,30 @@ function Dashboard() {
       .order('created_at', { ascending: false });
   }
 
+  async function loadNotes(prospectIds) {
+    if (prospectIds.length === 0) {
+      setNotesByProspect({});
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from('follow_ups')
+      .select('prospect_id, note')
+      .in('prospect_id', prospectIds);
+
+    if (error) {
+      console.error('Fetch follow-up notes error:', error);
+      return;
+    }
+
+    const groupedNotes = data.reduce((groups, followUp) => {
+      groups[followUp.prospect_id] ??= [];
+      groups[followUp.prospect_id].push(followUp.note);
+      return groups;
+    }, {});
+    setNotesByProspect(groupedNotes);
+  }
+
   async function fetchProspects() {
     if (!user) return;
 
@@ -43,9 +66,16 @@ function Dashboard() {
     if (error) {
       console.error('Fetch prospects error:', error);
     } else {
-      setProspects(data ?? []);
+      const rows = data ?? [];
+      setProspects(rows);
+      await loadNotes(rows.map((prospect) => prospect.id));
     }
   }
+
+  useEffect(() => {
+    const interval = window.setInterval(() => setClockNow(Date.now()), 60_000);
+    return () => window.clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (authLoading || !userId) return;
@@ -59,7 +89,9 @@ function Dashboard() {
       if (error) {
         console.error('Fetch prospects error:', error);
       } else {
-        setProspects(data ?? []);
+        const rows = data ?? [];
+        setProspects(rows);
+        await loadNotes(rows.map((prospect) => prospect.id));
       }
     }
 
@@ -135,26 +167,58 @@ function Dashboard() {
   }
 
   async function handleAddNote(prospectId) {
-    const note = noteDrafts[prospectId];
-    if (!note || !note.trim()) return;
+    const note = noteDrafts[prospectId]?.trim();
+    if (!note || savingNotes[prospectId]) return;
 
-    const { error } = await supabase.from('follow_ups').insert({
-      prospect_id: prospectId,
-      note,
-    });
+    setSavingNotes((current) => ({ ...current, [prospectId]: true }));
+    setNoteFeedback((current) => ({ ...current, [prospectId]: null }));
 
-    if (error) {
+    try {
+      const { error: noteError } = await supabase.from('follow_ups').insert({
+        prospect_id: prospectId,
+        note,
+      });
+
+      if (noteError) throw noteError;
+
+      setNotesByProspect((current) => ({
+        ...current,
+        [prospectId]: [...(current[prospectId] ?? []), note],
+      }));
+      setNoteDrafts((current) => ({ ...current, [prospectId]: '' }));
+
+      const { error: timestampError } = await supabase
+        .from('prospects')
+        .update({ last_contacted_at: new Date().toISOString() })
+        .eq('id', prospectId)
+        .eq('user_id', user.id);
+
+      await fetchProspects();
+
+      if (timestampError) {
+        setNoteFeedback((current) => ({
+          ...current,
+          [prospectId]: {
+            message: `Note saved, but the nudge timer could not be reset: ${timestampError.message}`,
+            isError: true,
+          },
+        }));
+        return;
+      }
+
+      setNoteFeedback((current) => ({
+        ...current,
+        [prospectId]: { message: 'Note logged. The 72-hour nudge timer has restarted.', isError: false },
+      }));
+    } catch (error) {
       console.error('Add note error:', error);
-      return;
+      setNoteFeedback((current) => ({
+        ...current,
+        [prospectId]: { message: error.message || 'Unable to log this note.', isError: true },
+      }));
+    } finally {
+      setSavingNotes((current) => ({ ...current, [prospectId]: false }));
     }
-
-    await supabase
-      .from('prospects')
-      .update({ last_contacted_at: new Date().toISOString() })
-      .eq('id', prospectId);
-
-    setNoteDrafts((prev) => ({ ...prev, [prospectId]: '' }));
-    fetchProspects();
   }
 
   if (authLoading) {
@@ -241,7 +305,7 @@ function Dashboard() {
                 <div className="dash__card" key={prospect.id}>
                   <p className="dash__card-name">{prospect.name}</p>
                   <p className="dash__card-source">{prospect.source}</p>
-                  {isOverdue(prospect.last_contacted_at) && stage.key !== 'won' && (
+                  {isNudgeDue(prospect.last_contacted_at, clockNow) && stage.key !== 'won' && (
                     <span className="dash__nudge-badge">Nudge due today</span>
                   )}
 
@@ -253,12 +317,26 @@ function Dashboard() {
                       setNoteDrafts((prev) => ({ ...prev, [prospect.id]: e.target.value }))
                     }
                   />
+                  {noteFeedback[prospect.id] && (
+                    <p
+                      className={`dash__note-feedback${noteFeedback[prospect.id].isError ? ' dash__note-feedback--error' : ''}`}
+                      role={noteFeedback[prospect.id].isError ? 'alert' : 'status'}
+                    >
+                      {noteFeedback[prospect.id].message}
+                    </p>
+                  )}
+                  {(notesByProspect[prospect.id] ?? []).map((note, index) => (
+                    <p className="dash__logged-note" key={`${prospect.id}-${index}`}>
+                      {note}
+                    </p>
+                  ))}
                   <div className="dash__card-actions">
                     <button
                       className="dash__card-btn"
                       onClick={() => handleAddNote(prospect.id)}
+                      disabled={savingNotes[prospect.id] || !noteDrafts[prospect.id]?.trim()}
                     >
-                      Log note
+                      {savingNotes[prospect.id] ? 'Logging...' : 'Log note'}
                     </button>
                     {stage.key !== 'won' && (
                       <button

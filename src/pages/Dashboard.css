@@ -146,6 +146,27 @@
   min-height: 40px;
 }
 
+.dash__logged-note {
+  margin: 6px 0;
+  padding: 8px;
+  border-left: 2px solid var(--primary);
+  background: var(--bg_surface);
+  color: var(--secondary_color);
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.dash__note-feedback {
+  margin: 4px 0;
+  color: var(--wall__stepnav-dot--won);
+  font-size: 12px;
+}
+
+.dash__note-feedback--error {
+  color: var(--status-danger);
+}
+
 .dash__card-actions {
   display: flex;
   gap: 6px;
@@ -169,6 +190,11 @@
 
 .dash__card-btn--danger {
   color: #c0472b;
+}
+
+.dash__card-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 .dash__lost {
