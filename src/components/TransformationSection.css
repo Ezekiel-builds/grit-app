@@ -42,6 +42,13 @@
   font-weight: 400;
 }
 
+.state__value {
+  min-width: 84px;
+  color: var(--secondary_color);
+  font-family: var(--sub__font);
+  font-weight: 700;
+}
+
 .snap__btn {
   background: var(--secondary_color);
   color: var(--color_text-btn);
@@ -69,6 +76,21 @@
   justify-items: stretch;
   gap: 20px;
   padding: 16px 20px;
+}
+
+.trans__grid--snapped .note__card {
+  transform: none;
+  border-color: var(--primary_color);
+  background: var(--bg_surface);
+  box-shadow: 2px 2px 0 var(--secondary_color);
+}
+
+.trans__grid--snapped .tape-graphic {
+  display: none;
+}
+
+.trans__grid--snapped .note-label {
+  color: var(--primary);
 }
 
 /* .left__panel, .right__panel {

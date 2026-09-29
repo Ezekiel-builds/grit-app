@@ -12,20 +12,28 @@ function TransformationSection() {
 
                 <div className="trans__toggle-group">
                     <span className="state__label">State:</span>
+                    <span className="state__value" aria-live="polite">
+                        {isSnapped ? 'In order' : 'Scattered'}
+                    </span>
 
-                    <button className="snap__btn"
-                    onClick={() => setIsSnapped(!isSnapped)}
+                    <button
+                        type="button"
+                        className="snap__btn"
+                        aria-pressed={isSnapped}
+                        onClick={() => setIsSnapped((current) => !current)}
                     >
-                        {isSnapped ? "Snapped into order": "Snap into order"}    
+                        {isSnapped ? 'Scatter notes' : 'Snap into order'}
                     </button>
                 </div>
             </div>
 
-            <div className="trans__grid">
+            <div className={`trans__grid${isSnapped ? ' trans__grid--snapped' : ''}`}>
                 <div className="left__panel">
                     <div className="panel__header">
-                        <span className="panel-title red-text">  <span className="red__dot">●</span> The Scattered Notes Dump</span>
-                        <span className="panel__tag">Unstructured</span>
+                        <span className="panel-title red-text">
+                            <span className="red__dot">●</span> {isSnapped ? 'Lead Context, Sorted' : 'The Scattered Notes Dump'}
+                        </span>
+                        <span className="panel__tag">{isSnapped ? 'Organized' : 'Unstructured'}</span>
                     </div>
 
                     <div className="notes__stack">
@@ -66,7 +74,9 @@ function TransformationSection() {
                         </div>
 
                         <div className="panel-footer font-mono red-text">
-                            Result: Decision paralysis → Needs holding & decay line
+                            {isSnapped
+                                ? 'Result: Clear context → One next action at a time'
+                                : 'Result: Decision paralysis → Needs holding & decay line'}
                         </div>
 
                     </div>
