@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import GritLogo from "../assets/Grit_logo.png"
 
 function Footer() {
@@ -14,15 +15,15 @@ function Footer() {
         </p>
 
         <div className="footer__links">
-                <a href="#" className="header__nav-link">
+                <Link to="/the-reality" className="header__nav-link">
                 The Reality
-                </a>
-                <a href="#" className="header__nav-link">
+                </Link>
+                <Link to="/the-wall" className="header__nav-link">
                 The Wall
-                </a>
-                <a href="#" className="header__nav-link">
+                </Link>
+                <Link to="/dashboard" className="header__nav-link">
                 Dashboard
-                </a>
+                </Link>
         </div>
     </footer>
   );
