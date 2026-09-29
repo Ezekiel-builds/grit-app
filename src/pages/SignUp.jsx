@@ -1,8 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useAuth } from '../components/useAuth';
 import { isSupabaseConfigured, supabase } from '../SupabaseClient';
 import './SignUp.css';
 
 function SignUp() {
+    const navigate = useNavigate();
+    const { setUser, setProfile } = useAuth();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,9 +26,13 @@ function SignUp() {
         setIsSubmitting(true);
 
         try {
+            const fullName = name.trim();
             const { data, error } = await supabase.auth.signUp({
                 email,
-                password
+                password,
+                options: {
+                    data: { full_name: fullName }
+                }
             });
 
             if (error) throw error;
@@ -38,7 +46,7 @@ function SignUp() {
                 .from('profiles')
                 .insert({
                     id: newUser.id,
-                    full_name: name.trim()
+                    full_name: fullName
                 });
 
             if (profileError) {
@@ -48,8 +56,9 @@ function SignUp() {
                 return;
             }
 
-            setMessage('Your account and profile were created.');
-            setMessageIsError(false);
+            setUser(newUser);
+            setProfile({ id: newUser.id, full_name: fullName });
+            navigate('/welcome', { replace: true, state: { name: fullName } });
         } catch (error) {
             console.error('Signup error:', error);
             setMessage(error.message || 'Unable to create your account.');

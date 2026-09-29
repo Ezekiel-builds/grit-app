@@ -177,7 +177,7 @@ function Dashboard() {
         <p className="dash__tag">● PIPELINE ACTIVE • SOLOPRENEUR LEDGER</p>
         <div className="dash__headline-row">
           <h1 className="dash__headline">
-            Hey, {profile?.full_name || 'there'}.{' '}
+            Hey, {profile?.full_name || user?.user_metadata?.full_name || 'there'}.{' '}
             <span className="dash__headline-accent">{total} prospects</span> are waiting on you.
           </h1>
           <button className="dash__add-btn" onClick={() => {
