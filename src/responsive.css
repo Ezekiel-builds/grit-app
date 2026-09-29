@@ -198,6 +198,13 @@
     flex: 1;
   }
 
+   .wall__hold-tip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+  }
+
   .journal {
     padding-right: 2rem;
     padding-left: 2rem;

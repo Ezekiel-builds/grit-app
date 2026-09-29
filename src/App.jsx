@@ -1,4 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router';
+import { useEffect } from 'react';
+import AOS from 'aos';
 import HomePage from './pages/HomePage';
 import TheReality from './pages/TheReality';
 import TheWall from './pages/TheWall';
@@ -25,6 +27,13 @@ function RequireAuth({ children }) {
 }
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      once: true,     // Whether animation should happen only once while scrolling down
+      easing: 'ease-in-out',
+    });
+  }, []);
 
   return (
       <Routes>

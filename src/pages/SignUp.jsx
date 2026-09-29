@@ -72,8 +72,8 @@ function SignUp() {
     return (
         <>
         <Header />
-        <main className="form__box">
-            <section className="form__container">
+        <main className="form__box" data-aos="fade-up" data-aos-delay="80">
+            <section className="form__container" data-aos="zoom-in" data-aos-delay="140">
                 <div className="form__heading">
                     <h2 className="form__heading-text">
                         <span className="form__heading-text-highlight">CHALK</span> up

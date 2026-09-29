@@ -7,26 +7,26 @@ function TheWall() {
   return (
     <>
         <Header />
-        <div className="wall">
-            <div className="wall__meta">
+        <div className="wall" data-aos="fade-up" data-aos-delay="80">
+            <div className="wall__meta" data-aos="fade-down" data-aos-delay="120">
                 <span className="wall__meta-tag">// 02 • THE ARCHITECTURE</span>
                 <span className="wall__meta-version">
                 METHODOLOGY <span className="wall__meta-version-num">V2.4</span>
                 </span>
             </div>
 
-            <div className="wall__pills">
+            <div className="wall__pills" data-aos="fade-up" data-aos-delay="140">
                 <span className="wall__pill">// HOW IT WORKS</span>
                 <span className="wall__pill-dot">•</span>
                 <span className="wall__pill">THE 5 STEPS</span>
             </div>
 
-            <div className="wall__header">
+            <div className="wall__header" data-aos="fade-up" data-aos-delay="180">
                 <h3 className="wall__title">The Wall: How Grit Actually Works</h3>
                 <span className="wall__page-ref">P. 18 / ASCENT</span>
             </div>
 
-            <blockquote className="wall__quote">
+            <blockquote className="wall__quote" data-aos="fade-up" data-aos-delay="220">
                 "In rock climbing, a Grit isn't an elaborate roadmap—it's just a
                 solid point of contact that supports your weight so you can reach the
                 next grip. The Wall is engineered around five tangible holds that carry
@@ -34,35 +34,35 @@ function TheWall() {
                 without the cognitive fog of a 40-step enterprise CRM."
             </blockquote>
 
-            <nav className="wall__stepnav">
-                <span className="wall__stepnav-item">
+            <nav className="wall__stepnav" data-aos="fade-up" data-aos-delay="260">
+                <span className="wall__stepnav-item" data-aos="zoom-in" data-aos-delay="300">
                 <span className="wall__stepnav-dot wall__stepnav-dot--scout"></span>
                 01 SCOUT
                 </span>
 
-                <span className="wall__stepnav-item">
+                <span className="wall__stepnav-item" data-aos="zoom-in" data-aos-delay="340">
                 <span className="wall__stepnav-dot wall__stepnav-dot--out"></span>
                 02 OUT
                 </span>
 
-                <span className="wall__stepnav-item">
+                <span className="wall__stepnav-item" data-aos="zoom-in" data-aos-delay="380">
                 <span className="wall__stepnav-dot wall__stepnav-dot--talk"></span>
                 03 TALK
                 </span>
 
-                <span className="wall__stepnav-item">
+                <span className="wall__stepnav-item" data-aos="zoom-in" data-aos-delay="420">
                 <span className="wall__stepnav-dot wall__stepnav-dot--scope"></span>
                 04 SCOPE
                 </span>
 
-                <span className="wall__stepnav-item">
+                <span className="wall__stepnav-item" data-aos="zoom-in" data-aos-delay="460">
                 <span className="wall__stepnav-dot wall__stepnav-dot--won"></span>
                 05 WON
                 </span>
             </nav>
 
             <div className="wall__holds">
-                <div className="wall__hold">
+                <div className="wall__hold" data-aos="fade-up" data-aos-delay="200">
                     <div className="wall__hold-number wall__hold-number--scout">
                         <span className="wall__hold-number-val">01</span>
                         <span className="wall__hold-number-label">SCOUT</span>
@@ -96,7 +96,7 @@ function TheWall() {
                     </div>
                 </div>
 
-                <div className="wall__hold">
+                <div className="wall__hold" data-aos="fade-up" data-aos-delay="260">
                     <div className="wall__hold-number wall__hold-number--out">
                         <span className="wall__hold-number-val">02</span>
                         <span className="wall__hold-number-label">OUT</span>
@@ -130,7 +130,7 @@ function TheWall() {
                     </div>
                 </div>
 
-                <div className="wall__hold">
+                <div className="wall__hold" data-aos="fade-up" data-aos-delay="320">
                     <div className="wall__hold-number wall__hold-number--talk">
                         <span className="wall__hold-number-val">03</span>
                         <span className="wall__hold-number-label">TALK</span>
@@ -163,7 +163,7 @@ function TheWall() {
                     </div>
                 </div>
 
-                <div className="wall__hold">
+                <div className="wall__hold" data-aos="fade-up" data-aos-delay="380">
                     <div className="wall__hold-number wall__hold-number--scope">
                         <span className="wall__hold-number-val">04</span>
                         <span className="wall__hold-number-label">SCOPE</span>
@@ -194,7 +194,7 @@ function TheWall() {
                     </div>
                 </div>
 
-                <div className="wall__hold">
+                <div className="wall__hold" data-aos="fade-up" data-aos-delay="440">
                     <div className="wall__hold-number wall__hold-number--won">
                         <span className="wall__hold-number-val">05</span>
                         <span className="wall__hold-number-label">WON</span>
@@ -225,7 +225,7 @@ function TheWall() {
                 </div>
             </div>
 
-            <div className="wall__note">
+            <div className="wall__note" data-aos="fade-up" data-aos-delay="180">
                 <p className="wall__note-heading">
                     A NOTE FROM THE JOURNAL{" "}
                     <span className="wall__note-heading-divider">//</span> NO VANITY
@@ -241,7 +241,7 @@ function TheWall() {
                 </p>
             </div>
 
-            <div className="wall__cta">
+            <div className="wall__cta" data-aos="zoom-in" data-aos-delay="220">
                 <div className="wall__cta-icon">▲</div>
                 <h2 className="wall__cta-title">Grab the first hold.</h2>
                 <p className="wall__cta-subtitle">

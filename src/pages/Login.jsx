@@ -43,8 +43,8 @@ function Login() {
     return (
         <>
         <Header />
-        <main className="form__box">
-            <section className="form__container form__container--login">
+        <main className="form__box" data-aos="fade-up" data-aos-delay="80">
+            <section className="form__container form__container--login" data-aos="zoom-in" data-aos-delay="140">
                 <div className="form__heading">
                     <h1 className="form__heading-text">
                         Back on the <span className="form__heading-text-highlight">wall</span>

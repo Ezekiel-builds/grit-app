@@ -11,8 +11,8 @@ function HomePage() {
     <>
       <Header />
       <main>
-            <section className="hero">
-                    <div className="hero__left">
+            <section className="hero" data-aos="fade-up" data-aos-delay="80">
+                    <div className="hero__left" data-aos="fade-right" data-aos-delay="140">
                     <span className="hero__eyebrow">
                         <span className="dot__icon">•</span>  Built for your first client • Solo freelancer edition
                     </span>
@@ -31,7 +31,7 @@ function HomePage() {
                         invoice.
                     </p>
 
-                    <div className="hero__btn">
+                    <div className="hero__btn" data-aos="zoom-in" data-aos-delay="220">
                         <Link to="/sign-up" className="hero__btn-link">
                         Get Gritted <i className="fi fi-rr-arrow-right hero__btn-arrow"></i>
                         </Link>
@@ -47,9 +47,9 @@ function HomePage() {
                     </div>
                     </div>
 
-                    <div className="neo-container">
+                    <div className="neo-container" data-aos="zoom-in" data-aos-delay="180">
                         {/* Card 1: Notes App */}
-                        <div className="neo-card card-1">
+                        <div className="neo-card card-1" data-aos="fade-left" data-aos-delay="220">
                                 <div className="tape"></div>
                                 <div className="card-header">
                                     <span className="app-title">NOTES APP</span>
@@ -61,7 +61,7 @@ function HomePage() {
                         </div>
 
                         {/* Card 2: Instagram DM */}
-                        <div className="neo-card card-2">
+                        <div className="neo-card card-2" data-aos="fade-left" data-aos-delay="260">
                                 <div className="tape"></div>
                                 <div className="card-header">
                                     <span className="app-title">INSTAGRAM DM</span>
@@ -73,7 +73,7 @@ function HomePage() {
                         </div>
 
                         {/* Card 3: Gmail Draft */}
-                        <div className="neo-card card-3">
+                        <div className="neo-card card-3" data-aos="fade-left" data-aos-delay="300">
                             <div className="tape"></div>
                             <div className="card-header">
                             <span className="app-title">GMAIL DRAFT</span>
@@ -86,7 +86,7 @@ function HomePage() {
                         </div>
 
                         {/* Card 4: Chrome */}
-                        <div className="neo-card card-4">
+                        <div className="neo-card card-4" data-aos="fade-left" data-aos-delay="340">
                             <div className="tape"></div>
                             <div className="card-header">
                             <span className="app-title">CHROME</span>
@@ -100,10 +100,10 @@ function HomePage() {
                     </div>
             </section>
 
-            <section className="transformation__section">
+            <section className="transformation__section" data-aos="fade-up" data-aos-delay="100">
                <div className="transformation__wrapper">
             
-                    <div className="transformation__header">
+                    <div className="transformation__header" data-aos="fade-up" data-aos-delay="120">
                         <p className="header__eyebrow">
                             // 01 • The Unvarnished Reality
                         </p>
@@ -114,7 +114,7 @@ function HomePage() {
                         </h3>
                     </div>
 
-                     <div className="transformation__body-text">
+                     <div className="transformation__body-text" data-aos="fade-up" data-aos-delay="180">
                             <p className="transformation__text">
                                 I had 14 tabs open with company 'About' pages, a Notion doc I spent three days styling instead of
                                 sending pitches, and a gnawing dread every Thursday afternoon wondering if I seemed desperate by
@@ -132,14 +132,14 @@ function HomePage() {
                             </p>
                      </div> 
 
-                        <div className="interactive__demo">
+                        <div className="interactive__demo" data-aos="zoom-in" data-aos-delay="220">
                             <TransformationSection />
                         </div>
                 </div>
             </section>
 
-            <section className="how__it-works">
-                <div className="process__header">
+            <section className="how__it-works" data-aos="fade-up" data-aos-delay="100">
+                <div className="process__header" data-aos="fade-up" data-aos-delay="140">
                     <span className="process__header-eyebrow">
                         How it works • The 5 steps
                     </span>
@@ -158,8 +158,8 @@ function HomePage() {
         
             </section>
 
-            <section className="visuals">
-                <div className="visuals__header">
+            <section className="visuals" data-aos="fade-up" data-aos-delay="100">
+                <div className="visuals__header" data-aos="fade-up" data-aos-delay="140">
                     <span className="visuals__eyebrow">
                         // 03 • The Daily Rig
                     </span>
@@ -174,7 +174,7 @@ function HomePage() {
                     </p>
                 </div>
 
-                <div className="visuals__image">
+                <div className="visuals__image" data-aos="zoom-in-up" data-aos-delay="180">
                     <div className="visuals__image-topbar">
                         <div className="topbar__left">
                             <span className="top__circle top__circle-red"></span>
@@ -191,8 +191,8 @@ function HomePage() {
                 </div>
             </section>
 
-            <section className="main__cta">
-                <div className="cta__header">
+            <section className="main__cta" data-aos="fade-up" data-aos-delay="120">
+                <div className="cta__header" data-aos="fade-up" data-aos-delay="160">
                     <span className="cta__header-eyebrow">
                         <span className="eyebrow__circle"></span>
                         The simple promise • No risk
@@ -208,11 +208,11 @@ function HomePage() {
                     </p>
                 </div>
 
-                <Link to="/sign-up" className="cta__btn">
+                <Link to="/sign-up" className="cta__btn" data-aos="zoom-in" data-aos-delay="200">
                     Get Gritted <i className="fi fi-rr-arrow-up-right cta__icon"></i>
                 </Link>
 
-                <span className="cta__bottom">
+                <span className="cta__bottom" data-aos="fade-up" data-aos-delay="220">
                     Free. Built by someone who lived the problem. No credit card • No vanity enterprise tiers • Export your contacts anytime
                 </span>
             </section>
