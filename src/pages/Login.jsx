@@ -78,6 +78,8 @@ function Login() {
                             autoComplete="current-password"
                             placeholder="Your password"
                             value={password}
+                            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}"
+                            title="For new accounts, use 8+ characters with upper and lowercase letters, a number, and a symbol."
                             onChange={(event) => setPassword(event.target.value)}
                             required
                         />

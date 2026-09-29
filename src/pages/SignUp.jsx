@@ -5,6 +5,8 @@ import Header from '../components/Header';
 import { isSupabaseConfigured, supabase } from '../SupabaseClient';
 import './SignUp.css';
 
+const STRONG_PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+
 function SignUp() {
     const navigate = useNavigate();
     const { setUser, setProfile } = useAuth();
@@ -15,11 +17,25 @@ function SignUp() {
     const [messageIsError, setMessageIsError] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    function validatePasswordCandidate(value) {
+        if (!STRONG_PASSWORD_REGEX.test(value)) {
+            setMessage('Use 8+ characters with upper and lowercase letters, a number, and a symbol.');
+            setMessageIsError(true);
+            return false;
+        }
+
+        return true;
+    }
+
     async function handleSignUp(e) {
         e.preventDefault();
         if (!isSupabaseConfigured) {
             setMessage('Signup is unavailable because Supabase is not configured for this deployment.');
             setMessageIsError(true);
+            return;
+        }
+
+        if (!validatePasswordCandidate(password)) {
             return;
         }
 
@@ -127,11 +143,13 @@ function SignUp() {
                         <input 
                         type="password"
                         id="signup-password"
-                        placeholder="At least 6 characters"
+                        placeholder="Use 8+ chars with mixed case, number, symbol"
                         className="form__input"
                         value={password}
                         autoComplete="new-password"
-                        minLength={6}
+                        minLength={8}
+                        pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}"
+                        title="Use 8+ characters with upper and lowercase letters, a number, and a symbol."
                         required
                         onChange={(e) => setPassword(e.target.value)}
                         />
