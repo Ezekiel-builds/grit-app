@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useAuth } from '../components/useAuth';
+import Header from '../components/Header';
 import { isSupabaseConfigured, supabase } from '../SupabaseClient';
 import './SignUp.css';
 
@@ -69,7 +70,9 @@ function SignUp() {
     }
 
     return (
-        <div className="form__box">
+        <>
+        <Header />
+        <main className="form__box">
             <section className="form__container">
                 <div className="form__heading">
                     <h2 className="form__heading-text">
@@ -138,13 +141,14 @@ function SignUp() {
                             {message}
                         </p>
                     )}
-                    <button type="submit" disabled={isSubmitting}>
+                    <button className="form__submit" type="submit" disabled={isSubmitting}>
                         {isSubmitting ? 'Creating account...' : 'Start Climbing'}
                     </button>
                     <p className="form__switch">Already have an account? <Link to="/login">Log in</Link></p>
                 </form>
             </section>
-        </div>
+        </main>
+        </>
     )
 }
 

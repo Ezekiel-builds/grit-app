@@ -1,36 +1,47 @@
 .form__box {
-        min-height: 100vh;
-        min-height: 100svh;
+    min-height: calc(100vh - 74px);
+    min-height: calc(100svh - 74px);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-        padding: 24px 16px;
+    padding: 40px 16px;
+    background-color: var(--bg_alt);
 }
 
 .form__container {
-    width: min(100%, 420px);
-  background-color: var(--color_text-btn);
+  width: min(100%, 460px);
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 16px 24px;
+  gap: 24px;
+  padding: 32px;
+  border: 1px solid var(--secondary_color);
+  border-top: 5px solid var(--primary);
+  border-radius: 6px;
+  background-color: var(--bg_surface);
+  box-shadow: 4px 4px 0 var(--secondary_color);
 }
 
 .form__heading {
-    text-align: center;
-    line-height: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+    line-height: 1.4;
 }
 
 .form__heading-text {
-    font-size: var(--font-h2);
+    font-size: var(--font-h3);
     font-family: var(--header_font);
-    font-weight: 550;
+    font-weight: 700;
     color: var(--secondary_color);
 }
 
+.form__heading-text-highlight {
+    color: var(--primary);
+}
+
 .form__heading-subtext {
-    color: var(--secondary_color);
+    color: var(--secondary);
     font-size: var(--font-small);
     font-weight: 300;
 }
@@ -78,4 +89,53 @@
 .form__switch a {
     color: var(--primary);
     font-weight: 700;
+}
+
+.form__input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 1px solid var(--primary_color);
+    border-radius: 4px;
+    background-color: var(--bg_main);
+    color: var(--secondary_color);
+    font: inherit;
+}
+
+.form__input:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.form__submit {
+    min-height: 48px;
+    padding: 12px 18px;
+    border: 1px solid var(--secondary_color);
+    border-radius: 4px;
+    background-color: var(--secondary_color);
+    color: var(--color_text-cta);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form__submit:hover:not(:disabled) {
+    background-color: var(--btn-bg-hover);
+}
+
+.form__submit:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.form__submit:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+@media (max-width: 520px) {
+    .form__container {
+        padding: 24px 20px;
+    }
 }

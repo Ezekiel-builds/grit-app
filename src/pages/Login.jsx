@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router';
 import { useAuth } from '../components/useAuth';
+import Header from '../components/Header';
 import { isSupabaseConfigured, supabase } from '../SupabaseClient';
 import './SignUp.css';
 import './Login.css';
@@ -40,6 +41,8 @@ function Login() {
     }
 
     return (
+        <>
+        <Header />
         <main className="form__box">
             <section className="form__container form__container--login">
                 <div className="form__heading">
@@ -82,7 +85,7 @@ function Login() {
 
                     {errorMessage && <p className="form__message form__message--error" role="alert">{errorMessage}</p>}
 
-                    <button type="submit" disabled={isSubmitting}>
+                    <button className="form__submit" type="submit" disabled={isSubmitting}>
                         {isSubmitting ? 'Logging in...' : 'Log in'}
                     </button>
                     <p className="form__switch">
@@ -91,6 +94,7 @@ function Login() {
                 </form>
             </section>
         </main>
+        </>
     );
 }
 
