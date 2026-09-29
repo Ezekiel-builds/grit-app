@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { supabase } from '../SupabaseClient';
+import { isSupabaseConfigured, supabase } from '../SupabaseClient';
 import './SignUp.css';
 
 function SignUp() {
@@ -12,6 +12,12 @@ function SignUp() {
 
     async function handleSignUp(e) {
         e.preventDefault();
+        if (!isSupabaseConfigured) {
+            setMessage('Signup is unavailable because Supabase is not configured for this deployment.');
+            setMessageIsError(true);
+            return;
+        }
+
         setMessage('');
         setIsSubmitting(true);
 

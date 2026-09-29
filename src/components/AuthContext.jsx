@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { AuthContext } from './authContext';
-import { supabase } from '../SupabaseClient';
+import { isSupabaseConfigured, supabase } from '../SupabaseClient';
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(isSupabaseConfigured);
 
   async function fetchProfile(userId) {
     const { data, error } = await supabase
@@ -23,6 +23,8 @@ export function AuthProvider({ children }) {
   }
 
   useEffect(() => {
+    if (!isSupabaseConfigured) return;
+
     async function checkExistingSession() {
       try {
         const { data, error } = await supabase.auth.getSession();
