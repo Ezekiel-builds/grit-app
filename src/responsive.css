@@ -272,6 +272,22 @@
     padding: 12px 16px;
   }
 
+  .card-1 {
+    transform: rotate(-1deg) translateX(-3px);
+  }
+
+  .card-2 {
+    transform: rotate(1deg) translateX(3px);
+  }
+
+  .card-3 {
+    transform: rotate(-0.5deg) translateX(-2px);
+  }
+
+  .card-4 {
+    transform: rotate(1deg) translateX(2px);
+  }
+
   .visuals {
     margin-top: 40px;
     padding-top: 2.5rem;
